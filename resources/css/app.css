@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    color-scheme: dark;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px theme('colors.zinc.950') inset;
+    -webkit-text-fill-color: theme('colors.zinc.100');
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Pagination styling */
+nav[aria-label="Pagination"] > div:first-child {
+    @apply hidden sm:flex sm:flex-1 sm:items-center sm:justify-between px-4 py-3;
+}
+
+nav[aria-label="Pagination"] span,
+nav[aria-label="Pagination"] a {
+    @apply inline-flex items-center px-3 py-2 text-sm font-medium rounded-md border border-violet-900/40 bg-zinc-900/60 text-zinc-300 transition hover:bg-zinc-800 hover:text-white;
+}
+
+nav[aria-label="Pagination"] span[aria-current="page"] {
+    @apply bg-violet-600 text-white border-violet-500;
+}
+
+nav[aria-label="Pagination"] > div:nth-child(2) {
+    @apply sm:hidden flex justify-between px-4 py-3;
+}
